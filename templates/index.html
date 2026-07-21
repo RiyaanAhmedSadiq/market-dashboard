@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Analytics Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen p-8">
+
+    <div class="max-w-5xl mx-auto">
+        <!-- Header -->
+        <header class="mb-8 border-b border-slate-700 pb-4 flex justify-between items-center">
+            <div>
+                <h1 class="text-3xl font-bold text-emerald-400">Global Forex Dashboard</h1>
+                <p class="text-slate-400 text-sm">Real-time exchange rates against USD ($1.00)</p>
+            </div>
+            <span class="px-3 py-1 text-xs font-semibold rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                {{ data.status }}
+            </span>
+        </header>
+
+        <!-- Market Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- USD / GBP -->
+            <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-lg">
+                <p class="text-slate-400 text-xs font-bold uppercase tracking-wider">USD / GBP</p>
+                <h2 class="text-3xl font-extrabold text-white my-3">£{{ data.gbp }}</h2>
+                <p class="text-slate-500 text-xs">$1.00 USD yields £{{ data.gbp }} GBP</p>
+            </div>
+
+            <!-- USD / EUR -->
+            <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-lg">
+                <p class="text-slate-400 text-xs font-bold uppercase tracking-wider">USD / EUR</p>
+                <h2 class="text-3xl font-extrabold text-white my-3">€{{ data.eur }}</h2>
+                <p class="text-slate-500 text-xs">$1.00 USD yields €{{ data.eur }} EUR</p>
+            </div>
+
+            <!-- USD / JPY -->
+            <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-lg">
+                <p class="text-slate-400 text-xs font-bold uppercase tracking-wider">USD / JPY</p>
+                <h2 class="text-3xl font-extrabold text-white my-3">¥{{ data.jpy }}</h2>
+                <p class="text-slate-500 text-xs">$1.00 USD yields ¥{{ data.jpy }} JPY</p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
